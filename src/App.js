@@ -30,24 +30,28 @@ function App() {
 
     getData()
   }, [language])
-  
+  console.log(moviesData)
   return (
     <div className="App">
         <button onClick={() => language === "pt-BR" ? setLanguage("en-US") : setLanguage("pt-BR")}>{language === "pt-BR" ? "Mudar para Inglês" : "Change to Portuguese"}</button>
         {
           moviesData !== null && moviesData.map((movie) => {
-            return (
+            if (movie.overview.length > 1) {
+              return (
 
-              <section key={movie.id} className='movie--card'>
-                  <img src={movie.poster_path} alt={`${movie.title} poster`}/>
-                  <h2>{movie.title}</h2>
-                  <p>{movie.overview}</p>
+                <section key={movie.id} className='movie--card'>
+                    <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={`${movie.title} poster`}/>
+                    <h2>{movie.title}</h2>
+                    <p>{movie.overview}</p>
 
-                  <div>
-                    <span>{movie.vote_average}</span>
-                  </div>
-              </section>
-            )
+                    <div>
+                      <span>{movie.vote_average} / 10</span>
+                    </div>
+                </section>
+              )
+            } 
+
+            return ""
           })
         }
         
