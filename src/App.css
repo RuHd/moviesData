@@ -8,6 +8,10 @@
   justify-content: center;
 }
 
+.App * {
+  color: white;
+}
+
 .App>button {
   margin: 0 auto;
   width: fit-content;
