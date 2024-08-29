@@ -33,7 +33,7 @@ function App() {
   
   return (
     <div className="App">
-        <button onClick={() => language == "pt-BR" ? setLanguage("en-US") : setLanguage("pt-BR")}>{language== "pt-BR" ? "Mudar para Inglês" : "Change to Portuguese"}</button>
+        <button onClick={() => language === "pt-BR" ? setLanguage("en-US") : setLanguage("pt-BR")}>{language === "pt-BR" ? "Mudar para Inglês" : "Change to Portuguese"}</button>
         {
           moviesData !== null && moviesData.map((movie) => {
             return (
