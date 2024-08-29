@@ -1,38 +1,55 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import './App.css';
-
-const BASE_URL = "https://api.themoviedb.org/3/authentication"
-
-const URL = 'https://api.themoviedb.org/3/account/21469114/lists?page=1';
-
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZDUwM2Q3MGE3YWQ2OTRiYzdhODI0YjJhYWU3NzIwMiIsIm5iZiI6MTcyNDg0ODQ2OC44NDYwNSwic3ViIjoiNjZjZGQ3YjA4ZjIwYzE1OWVhOTdkMjA4Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.vjVxcGIyud0lscOJcU6AKoNQPigdavet7xvtO4BaIJ4'
-  }
-};
+import axios from 'axios'
 
 
 function App() {
+  const [moviesData, setmoviesData] = useState(null)
+  const [language, setLanguage] = useState("pt-BR")
   useEffect(() => {
-    const getData = async () => {
-      // const res = await fetch(BASE_URL, options)
-      // const data = await res.json()
-
-      const restwo = await fetch(URL, options)
-
-      const data2 = await restwo.json()
-
-      console.log(data2)
+    const getData = () => {
+       
+       axios({
+        url: 'https://api.themoviedb.org/3/discover/movie',
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZDUwM2Q3MGE3YWQ2OTRiYzdhODI0YjJhYWU3NzIwMiIsIm5iZiI6MTcyNDk1MTgzNC40NjE3NTksInN1YiI6IjY2Y2RkN2IwOGYyMGMxNTllYTk3ZDIwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.M7yrL3rEfQG1yban5qjWH6vK9jfzB17jXY3xhFppawc'
+        },
+        params: {
+          page: 10,
+          language: language
+        }
+      }).then( response => {
+        console.log(response)
+        setmoviesData(response.data.results)
+        
+      })
+    
     }
 
     getData()
-  }, [])
+  }, [language])
+  
   return (
     <div className="App">
-        
-        
+        <button onClick={() => language == "pt-BR" ? setLanguage("en-US") : setLanguage("pt-BR")}>{language== "pt-BR" ? "Mudar para Inglês" : "Change to Portuguese"}</button>
+        {
+          moviesData !== null && moviesData.map((movie) => {
+            return (
+
+              <section key={movie.id} className='movie--card'>
+                  <img src={movie.poster_path} alt={`${movie.title} poster`}/>
+                  <h2>{movie.title}</h2>
+                  <p>{movie.overview}</p>
+
+                  <div>
+                    <span>{movie.vote_average}</span>
+                  </div>
+              </section>
+            )
+          })
+        }
         
     </div>
   );
