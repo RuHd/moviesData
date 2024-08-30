@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import './App.css';
 import axios from 'axios'
+import MovieCard from './components/MovieCard/MovieCard';
 
 
 function App() {
@@ -38,16 +39,12 @@ function App() {
           moviesData !== null && moviesData.map((movie) => {
             if (movie.overview.length > 1) {
               return (
-
-                <section key={movie.id} className='movie--card'>
-                    <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={`${movie.title} poster`}/>
-                    <h2>{movie.title}</h2>
-                    <p>{movie.overview}</p>
-
-                    <div>
-                      <span>{movie.vote_average} / 10</span>
-                    </div>
-                </section>
+                <MovieCard
+                  title={movie.title}
+                  poster={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                  description={movie.overview}
+                  rating={movie.vote_average}
+                />
               )
             } 
 

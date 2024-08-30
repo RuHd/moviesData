@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.Movie--Card {
+    position: relative;
+    width: 200px;
+    min-height: 300px;
+    padding: 10px;
+    background-color: transparent;
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden;
+    
+}
+
+.Movie--Card::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.082);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.034);
+    z-index: -5;
+}
+
+.Movie--Card::before {
+    position: absolute;
+    position: absolute;
+    content: "";
+    top: 40%;
+    left: 25%;
+    width: 100px;
+    height: 50px;
+    z-index: -10;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 0 4px 50px gold,
+                0 4px 40px gold,
+                0 4px 80px gold;
+}
+
+.Movie--Card * {
+    z-index: 10;
+}
+
+.Movie--Card img {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+}
+
+.Movie--Card h3 {
+    color: white;
+    letter-spacing: 1px;
+}
+
+.description{
+    color: white;
+    height: max-content;
+    transition: .5s;
+}
+
+.rating {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: gold;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
