@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './MovieCard.css'
 
-const MovieCard = ({title, poster, rating, description,setselectedMovie, backdropPath}) => {
+const MovieCard = ({title, poster, date, description,setselectedMovie, backdropPath}) => {
  
     const movieClicked = () => {
       setselectedMovie({movieTitle: title, MoviePoster: backdropPath, description: description})
@@ -9,13 +9,11 @@ const MovieCard = ({title, poster, rating, description,setselectedMovie, backdro
     
   return (
     <article className='Movie--Card' onClick={() => movieClicked()}>
+        {date.split("-")[0] === "2024" && <span className='new--Movie'>NEW</span>}
         <img src={poster} alt={`${title} poster`}/>
         <div>
             <h3>{title}</h3>
-            {/* <p className='description'>
-                {description}
-            </p> */}
-            <span className='rating'>{rating}</span>
+            <span className='date'>{date.split("-")[0]}</span>
         </div>
     </article>
   )

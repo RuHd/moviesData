@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 .App {
   position: relative;
   max-width: 100%;
@@ -7,6 +9,16 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+
+.App>h2 {
+  color: black;
+  background-color: gold;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 
@@ -30,13 +42,11 @@
   height: 100px;
 }
 
-/*Carousel Poster Style*/
-
-  .carousel--poster {
-    position: relative;
-    width: 100%;
-    overflow-x: scroll;
-  }
+.carousel--poster {
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+}
 
   .carousel--poster h2 {
     position: fixed;
@@ -49,7 +59,9 @@
   .list--poster {
     width: 4000px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10px;
     gap: 50px;
     -ms-overflow-style: none;
     scrollbar-width: none;

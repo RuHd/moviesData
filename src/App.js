@@ -42,8 +42,9 @@ function App() {
           title = {selectedMovie.movieTitle}
           description = {selectedMovie.description}
         />
+        <h2>Top Movies</h2>  
         <section className='carousel--poster'> 
-          <h2>Top Movies</h2>  
+          
           <div className='list--poster'>
             {
               moviesData !== null && moviesData.map((movie) => {
@@ -54,7 +55,7 @@ function App() {
                       title={movie.title}
                       poster={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                       description={movie.overview}
-                      rating={movie.vote_average}
+                      date={movie.release_date}
                       setselectedMovie = {setselectedMovie}
                       backdropPath = {`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                     />

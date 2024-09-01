@@ -10,7 +10,7 @@ const Header = ({setLanguage, language}) => {
     <header>
         <h2>MovyDB</h2>
         <p>Brought you by TMDB</p>
-        <button onClick={changeLanguage}>{language === "pt-BR" ? "EN-US" : "PT-BR"}</button>
+        <button onClick={changeLanguage}>{language === "EN-US" ? "EN-US" : "PT-BR"}</button>
     </header>
   )
 }
