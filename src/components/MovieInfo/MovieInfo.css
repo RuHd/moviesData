@@ -1,0 +1,70 @@
+.Movie--Info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    color: white;
+    overflow-y: hidden;
+}
+
+.Movie--Info::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.63);
+    z-index: 10;
+    transition: .3s ease-in;
+    opacity: 0;
+}
+
+.description--shown::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.63);
+    z-index: 10;
+    opacity: 1;
+}
+
+.movie--description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+    height: 100%;
+    margin-bottom: 10px;
+    z-index: 11;
+    transition: .3s;
+    
+}
+
+.movie--description  h2 {
+    font-size: 1.2em;
+    text-align: center;
+    width: 95%;
+}
+
+.movie--description button {
+    background-color: transparent;
+    transition: .5s;
+}
+
+.movie--description button:hover {
+    cursor: pointer;
+    opacity: .6;
+}
+
+

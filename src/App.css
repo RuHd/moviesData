@@ -1,4 +1,5 @@
 .App {
+  position: relative;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,8 +11,13 @@
 
 
 .App>button {
+  position: absolute;
+  right: 0;
+  top: 30px;
   margin: 0 auto;
   width: fit-content;
+  border-radius: 20px;
+  padding: 10px;
 
 }
 
@@ -23,5 +29,34 @@
   width: 100px;
   height: 100px;
 }
+
+/*Carousel Poster Style*/
+
+  .carousel--poster {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .carousel--poster h2 {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    color: gold;
+    transform: translateX(-50%);
+  }
+
+  .list--poster {
+    width: 4000px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+  }
+  .list--poster::-webkit-scrollbar {
+    display: none;
+  }
 
 

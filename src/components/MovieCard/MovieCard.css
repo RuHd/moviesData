@@ -2,12 +2,15 @@
 
 .Movie--Card {
     position: relative;
-    width: 200px;
-    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:300px;
     padding: 10px;
     background-color: transparent;
     font-family: "Montserrat", sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
     
 }
 

@@ -1,0 +1,25 @@
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: gold;
+    color: black;
+    z-index: 100;
+}
+
+header button {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    transition: .5s;
+}
+
+header button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+}
