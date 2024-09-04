@@ -1,7 +1,7 @@
 import React from 'react'
 import "./MovieInfo.css"
-import { FaArrowCircleUp } from "react-icons/fa";
-import { FaArrowCircleDown } from "react-icons/fa";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+
 import { useState } from 'react';
 
 const MovieInfo = ({poster,title, description}) => {
@@ -15,12 +15,14 @@ const MovieInfo = ({poster,title, description}) => {
  
   return (
     <main className={`Movie--Info ${isClicked ? "description--shown" : ""}`} style={{backgroundImage: `url(${poster})` }}>
+        
         <section className='movie--description' style={ isClicked ? {transform: "translateY(20%)"} : {transform: "translateY(82%)"}}>
             <button onClick={arrowClick}>
-                { isClicked ? <FaArrowCircleDown color='gold' size={30}/> : <FaArrowCircleUp color='gold' size={30}/>}
+                { isClicked ? <IoIosArrowDown  color='gold' size={30}/> : <IoIosArrowUp color='gold' size={30}/>}
             </button>
             <h2>{title}</h2>
             <p className='description' >{description}</p>
+            
         </section>
     </main>
   )

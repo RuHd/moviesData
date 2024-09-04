@@ -1,9 +1,12 @@
+main {
+    position: relative;
+}
+
 .Movie--Info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

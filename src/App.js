@@ -4,12 +4,15 @@ import axios from 'axios'
 import MovieCard from './components/MovieCard/MovieCard';
 import Header from './components/Header/Header';
 import MovieInfo from './components/MovieInfo/MovieInfo';
+import Footer from './components/Footer/Footer';
+
 
 
 function App() {
-  const [moviesData, setmoviesData] = useState(null)
+  const [moviesData, setmoviesData] = useState([])
   const [language, setLanguage] = useState("pt-BR")
   const [selectedMovie, setselectedMovie] = useState({})
+  const [addToWishList, setAddToWishList] = useState([])
 
   useEffect(() => {
     const getData = () => {
@@ -25,17 +28,17 @@ function App() {
           language: language
         }
       }).then( response => {
-        setmoviesData(response.data.results)
-      }).then( () => {
-        setselectedMovie({MoviePoster: `https://image.tmdb.org/t/p/original${moviesData[0].backdrop_path}`, movieTitle: moviesData[0].title, description: moviesData[0].overview})
+         setmoviesData(response.data.results)
+         
       })
     }
     getData()
+    
   }, [language])
-
-  console.log(moviesData)
+    console.log(addToWishList)
   return (
     <div className="App">
+        
         <Header setLanguage = {setLanguage} language= {language}/>
         <MovieInfo
           poster = {selectedMovie.MoviePoster}
@@ -58,16 +61,17 @@ function App() {
                       date={movie.release_date}
                       setselectedMovie = {setselectedMovie}
                       backdropPath = {`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                      setAddToWishList = {setAddToWishList}
+                      addToWishList = {addToWishList}
+                      ID= {movie.id}
                     />
                   )
-                } 
-
-                return ""
+                } return ""
               })
             }         
           </div>     
         </section>
-        
+        <Footer/>
     </div>
   );
 }

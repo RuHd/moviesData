@@ -1,16 +1,22 @@
 import React from 'react'
 import './Header.css'
+import usFlag from '../../usFlag.png'
+import brFlag from '../../brFlag.png'
 
-const Header = ({setLanguage, language}) => {
-
-  const changeLanguage = () => {
-    setLanguage(language === "pt-BR" ? "en-US" : "pt-BR")
-  }
+const Header = ({setLanguage}) => {
   return (
     <header>
         <h2>MovyDB</h2>
-        <p>Brought you by TMDB</p>
-        <button onClick={changeLanguage}>{language === "EN-US" ? "EN-US" : "PT-BR"}</button>
+        
+        <div className='btns--container'>
+          <button onClick={() => setLanguage("en-US")}>
+              <img src= {usFlag} alt="US Flag"/>
+          </button>
+          <button onClick={() => setLanguage("pt-BR")}>
+              <img src= {brFlag} alt="BR Flag"/>
+          </button>
+        </div>
+        
     </header>
   )
 }
