@@ -14,7 +14,7 @@ const MovieInfo = ({poster,title, description}) => {
 
  
   return (
-    <main className={`Movie--Info ${isClicked ? "description--shown" : ""}`} style={{backgroundImage: `url(${poster})` }}>
+    <article className={`Movie--Info ${isClicked ? "description--shown" : ""}`} style={{backgroundImage: `url(${poster})` }}>
         
         <section className='movie--description' style={ isClicked ? {transform: "translateY(20%)"} : {transform: "translateY(83%)"}}>
             <button onClick={arrowClick}>
@@ -24,7 +24,7 @@ const MovieInfo = ({poster,title, description}) => {
             <p className='description' >{description}</p>
             
         </section>
-    </main>
+    </article>
   )
 }
 

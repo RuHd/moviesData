@@ -1,0 +1,45 @@
+main {
+    max-width: 100%;
+    height: 100%;
+}
+
+main>h2 {
+    color: gold;
+}
+
+.movie--card {
+    max-width: 100%;
+  }
+  
+  .movie--card img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .carousel--poster {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: gold;
+  }
+  
+    .carousel--poster h2 {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      color: gold;
+      transform: translateX(-50%);
+    }
+  
+    .list--poster {
+      width: 4000px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-left: 30px;
+      gap: 50px;
+      
+      
+    }
