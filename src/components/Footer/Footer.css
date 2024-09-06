@@ -1,15 +1,19 @@
 footer {
-    text-align: center;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    max-width: 100%;
-    padding-bottom: 10px;
+    gap: 3px;
+    width: 100%;
+    padding: 10px;
+    color: white;
 }
 
-footer p {
+footer span {
+    align-self: flex-end;
+}
+
+footer img {
     width: 150px;
-    color: white;
 }
 

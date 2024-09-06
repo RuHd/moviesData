@@ -16,7 +16,7 @@ const MovieInfo = ({poster,title, description}) => {
   return (
     <main className={`Movie--Info ${isClicked ? "description--shown" : ""}`} style={{backgroundImage: `url(${poster})` }}>
         
-        <section className='movie--description' style={ isClicked ? {transform: "translateY(20%)"} : {transform: "translateY(82%)"}}>
+        <section className='movie--description' style={ isClicked ? {transform: "translateY(20%)"} : {transform: "translateY(83%)"}}>
             <button onClick={arrowClick}>
                 { isClicked ? <IoIosArrowDown  color='gold' size={30}/> : <IoIosArrowUp color='gold' size={30}/>}
             </button>

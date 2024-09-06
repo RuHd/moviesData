@@ -5,7 +5,7 @@ import tmdbLogo from '../../tmdbLOGO.svg'
 const Footer = () => {
   return (
     <footer>
-        <p>Data by</p>
+        <span>Data by</span>
         <img src={tmdbLogo} alt='TMDB Logo'/>     
     </footer>
   )

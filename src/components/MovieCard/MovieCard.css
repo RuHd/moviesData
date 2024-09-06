@@ -40,6 +40,10 @@
     
 }
 
+.Movie--Card img:hover {
+    cursor: pointer;
+}
+
 .Movie--Card h3 {
     color: white;
     font-size: .9em;
@@ -62,8 +66,8 @@
 .btn--addToWishList {
     position: absolute;
     right: 50%;
-    transform: translateX(50%);
     bottom: 90px;
+    transform: translateX(30%);  
     background-color: transparent;
     z-index: 20;
     scale: 2.2;

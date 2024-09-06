@@ -7,7 +7,6 @@ const Header = ({setLanguage}) => {
   return (
     <header>
         <h2>MovyDB</h2>
-        
         <div className='btns--container'>
           <button onClick={() => setLanguage("en-US")}>
               <img src= {usFlag} alt="US Flag"/>
