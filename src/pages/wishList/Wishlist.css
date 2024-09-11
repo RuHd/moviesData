@@ -1,0 +1,49 @@
+.wishlist {
+    width: 100%;
+    color: white;
+}
+
+.wishlist h2 {
+    color: gold;
+    font-size: 2em;
+    letter-spacing: 8px;
+}
+
+.wishlist--carousel--poster {
+    position: relative;
+    width: 100%;
+    max-height: 100vh;
+    margin-top: 20px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: gold;
+}
+
+.wishlist--list--poster {
+    display: flex;
+    align-items: center;
+    /* min-width: 4000px; */
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.centerSingleCard {
+    justify-content: center;
+}
+
+
+/*If there's not a movie Card in the wish list*/
+.noContent{
+    height: 500px;
+}
+
+.noContent>p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-size: 2em;
+    opacity: .3;
+}

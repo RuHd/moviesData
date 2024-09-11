@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Header.css'
 import usFlag from '../../usFlag.png'
 import brFlag from '../../brFlag.png'
+import { Link } from 'react-router-dom'
+import myContext from '../../context'
 
-const Header = ({setLanguage}) => {
+
+const Header = ({setLanguage, setopenWishPage}) => {
+
   return (
     <header>
         <h2>MovyDB</h2>
+        <nav>
+          <button onClick={() => setopenWishPage(false)}>Home</button>
+          <button onClick={() => setopenWishPage(true)}>Wishlist</button>
+        </nav>
+        
         <div className='btns--container'>
           <button onClick={() => setLanguage("en-US")}>
               <img src= {usFlag} alt="US Flag"/>

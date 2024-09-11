@@ -59,14 +59,8 @@
   }
 
   .list--poster {
-    width: 4000px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 10px;
-    gap: 50px;
-    
-    
+    align-items: flex-start;
   }
 
 

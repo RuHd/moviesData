@@ -3,7 +3,9 @@ import './App.css';
 import axios from 'axios'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import MyContext from './context'
 import MainPage from './pages/MainPage/MainPage';
+import WishList from './pages/wishList/WishList';
 
 
 
@@ -12,6 +14,7 @@ function App() {
   const [language, setLanguage] = useState("pt-BR")
   const [selectedMovie, setselectedMovie] = useState({})
   const [addToWishList, setAddToWishList] = useState([])
+  const [openWishPage, setopenWishPage] = useState(false)
 
   useEffect(() => {
     const getData = () => {
@@ -34,20 +37,16 @@ function App() {
     getData()
     
   }, [language])
-
   return (
-    <div className="App">
-        
-        <Header setLanguage = {setLanguage} language= {language}/>
-        <MainPage
-          moviesData={moviesData}
-          addToWishList={addToWishList}
-          setAddToWishList={setAddToWishList}
-          selectedMovie={selectedMovie}
-          setSelectedMovie = {setselectedMovie}
-        />
-        <Footer/>
-    </div>
+    <MyContext.Provider value={{moviesData,setmoviesData, addToWishList, setAddToWishList,selectedMovie, setselectedMovie}}>
+      <div className="App">
+          <Header setLanguage = {setLanguage} language= {language} setopenWishPage = {setopenWishPage}/>
+  
+          {openWishPage === false ? <MainPage/> : <WishList/>}
+
+          <Footer/>
+      </div>
+    </MyContext.Provider>
   );
 }
 

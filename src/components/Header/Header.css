@@ -13,6 +13,7 @@ header {
 
 header h2 {
     background: -webkit-linear-gradient( left, gold, rgb(109, 93, 2));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
