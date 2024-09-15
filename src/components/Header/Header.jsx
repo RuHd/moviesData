@@ -1,9 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './Header.css'
 import usFlag from '../../usFlag.png'
 import brFlag from '../../brFlag.png'
-import { Link } from 'react-router-dom'
-import myContext from '../../context'
 
 
 const Header = ({setLanguage, setopenWishPage}) => {

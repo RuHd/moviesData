@@ -7,7 +7,6 @@ import MovieCard from '../../components/MovieCard/MovieCard'
 const WishList = () => {
   const contextDB = useContext(myContext)
 
-  console.log(contextDB.addToWishList.length > 0)
   return (
     <div className={`wishlist ${contextDB.addToWishList.length == 0 ? "noContent" : ""}`}>
       <h2>Wish List</h2>
@@ -18,6 +17,7 @@ const WishList = () => {
             return (
               <li>
                   <MovieCard
+                    key={movie.movieID}
                     title={movie.title}
                     ID = {movie.movieID}
                     poster={movie.poster}

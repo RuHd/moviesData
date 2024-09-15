@@ -83,6 +83,13 @@
     animation: popsUp .5s both ;
 }
 
+.removeBtn {
+    background-color: gold;
+    font-weight: bold;
+    font-size: .9em;
+    padding: 5px;
+}
+
 @keyframes popsUp {
     0% {scale: 2.2}
     50% {scale: 3;}

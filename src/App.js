@@ -7,17 +7,16 @@ import MyContext from './context'
 import MainPage from './pages/MainPage/MainPage';
 import WishList from './pages/wishList/WishList';
 
-
-
 function App() {
   const [moviesData, setmoviesData] = useState([])
+  const [isDataLoaded, setisDataLoaded] = useState(false)
   const [language, setLanguage] = useState("pt-BR")
-  const [selectedMovie, setselectedMovie] = useState({})
   const [addToWishList, setAddToWishList] = useState([])
   const [openWishPage, setopenWishPage] = useState(false)
 
   useEffect(() => {
-    const getData = () => {
+    const getData = async () => {
+      
        axios({
         url: 'https://api.themoviedb.org/3/discover/movie',
         method: 'GET',
@@ -31,18 +30,18 @@ function App() {
         }
       }).then( response => {
          setmoviesData(response.data.results)
-         
+         setisDataLoaded(true)
       })
     }
     getData()
-    
   }, [language])
   return (
-    <MyContext.Provider value={{moviesData,setmoviesData, addToWishList, setAddToWishList,selectedMovie, setselectedMovie}}>
+    <MyContext.Provider value={{moviesData,setmoviesData, addToWishList, setAddToWishList}}>
       <div className="App">
           <Header setLanguage = {setLanguage} language= {language} setopenWishPage = {setopenWishPage}/>
   
-          {openWishPage === false ? <MainPage/> : <WishList/>}
+          {openWishPage === false && isDataLoaded && <MainPage/>}
+          {openWishPage && <WishList/>}
 
           <Footer/>
       </div>
