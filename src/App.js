@@ -38,7 +38,7 @@ function App() {
   return (
     <MyContext.Provider value={{moviesData,setmoviesData, addToWishList, setAddToWishList}}>
       <div className="App">
-          <Header setLanguage = {setLanguage} language= {language} setopenWishPage = {setopenWishPage}/>
+          <Header setLanguage = {setLanguage} language= {language} setopenWishPage = {setopenWishPage} openWishPage = {openWishPage}/>
   
           {openWishPage === false && isDataLoaded && <MainPage/>}
           {openWishPage && <WishList/>}

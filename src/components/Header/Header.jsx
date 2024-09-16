@@ -4,14 +4,14 @@ import usFlag from '../../usFlag.png'
 import brFlag from '../../brFlag.png'
 
 
-const Header = ({setLanguage, setopenWishPage}) => {
+const Header = ({setLanguage, setopenWishPage, openWishPage}) => {
 
   return (
     <header>
         <h2>MovyDB</h2>
         <nav>
-          <button onClick={() => setopenWishPage(false)}>Home</button>
-          <button onClick={() => setopenWishPage(true)}>Wishlist</button>
+          <button onClick={() => setopenWishPage(false)} className={`${!openWishPage && "currentPage"}` }>Home</button>
+          <button onClick={() => setopenWishPage(true)} className={`${openWishPage && "currentPage"}` }>Wishlist</button>
         </nav>
         
         <div className='btns--container'>

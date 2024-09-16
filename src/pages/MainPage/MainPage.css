@@ -21,8 +21,10 @@ main>h2 {
     width: 100%;
     margin-top: 20px;
     overflow-x: scroll;
+    overflow-y: hidden;
     scrollbar-width: thin;
-    scrollbar-color: gold;
+    scrollbar-color: gold transparent;
+    scroll-snap-align: center;
   }
   
     .carousel--poster h2 {
@@ -36,10 +38,17 @@ main>h2 {
     .list--poster {
       width: 4000px;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
-      padding-left: 30px;
       gap: 50px;
       
       
+    }
+
+    @media screen and (min-width: 720px) {
+      .carousel--poster {
+        scrollbar-width: thin ;
+        scroll-margin: 50px;
+        scroll-snap-align: center;
+      }
     }

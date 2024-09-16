@@ -96,5 +96,22 @@
     100% {scale: 2.2}
 }
 
+@media  screen and (min-width: 720px) {
+
+    .Movie--Card {
+        scale: .9;
+    }
+
+    .Movie--Card:hover {
+        cursor: pointer;
+        transition: .5s;
+        scale: 1.02;
+    }
+
+    .btn--addToWishList:hover  {
+        cursor: pointer;
+    }
+}
+
 
 

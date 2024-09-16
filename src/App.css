@@ -63,5 +63,11 @@
     align-items: flex-start;
   }
 
+  @media screen and (min-width: 720px) {
+    /* .App {
+      justify-content: space-between;
+    } */
+  }
+
 
 
